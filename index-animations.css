@@ -1,0 +1,25 @@
+header{
+    animation: header-slide-in 2s forwards;
+}
+
+div{
+    animation: div-slide-in 2s forwards;
+}
+
+@keyframes header-slide-in{
+    0%{
+        transform: translate(300%);
+    }
+    100%{
+        transform: translate(0%);
+    }
+}
+
+@keyframes div-slide-in{
+    0%{
+        transform: translate(-300%);
+    }
+    100%{
+        transform: translate(0%);
+    }
+}
