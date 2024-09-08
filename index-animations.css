@@ -2,8 +2,8 @@ header{
     animation: header-slide-in 2s forwards;
 }
 
-div{
-    animation: div-slide-in 2s forwards;
+.card{
+    animation: card-slide-in 2s forwards;
 }
 
 @keyframes header-slide-in{
@@ -15,7 +15,7 @@ div{
     }
 }
 
-@keyframes div-slide-in{
+@keyframes card-slide-in{
     0%{
         transform: translate(-300%);
     }

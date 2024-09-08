@@ -7,7 +7,7 @@ for (let i = 1; i <= 151; i++) {
   const image = document.createElement('img')
   const imageContainer = document.createElement('div')
   const card = document.createElement('div')
-  const pokemonInfos = document.createElement('p')
+  const pokemonName = document.createElement('h3')
 
   if (i < 10) {
     // Pour les nombres à un chiffre
@@ -20,13 +20,18 @@ for (let i = 1; i <= 151; i++) {
     image.src = `${path}pokemon_${i}.png`
   }
 
+  pokemonName.innerText = `Pokémon #${i}`
+  pokemonName.className = "pokemon-name"
+
   image.loading = 'lazy'
-  pokemonInfos.innerText = `Pokémon #${i}`
-  imageContainer.append(image)
   imageContainer.className = "image-container"
-  card.append(imageContainer, pokemonInfos)
+  imageContainer.append(image)
+
   card.className = "card"
+  card.append(imageContainer, pokemonName)
   pokemonContainer.append(card)
+
+
 }
 
 /*Section click*/
