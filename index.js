@@ -7,7 +7,8 @@ for (let i = 1; i <= 151; i++) {
   const image = document.createElement('img')
   const imageContainer = document.createElement('div')
   const card = document.createElement('div')
-  const pokemonName = document.createElement('h3')
+  const pokemonName = document.createElement('h1')
+  const pokemonDescription = document.createElement('p')
 
   if (i < 10) {
     // Pour les nombres à un chiffre
@@ -20,15 +21,25 @@ for (let i = 1; i <= 151; i++) {
     image.src = `${path}pokemon_${i}.png`
   }
 
-  pokemonName.innerText = `Pokémon #${i}`
+  pokemonName.innerText = `${pokemonsInfosList.pokemons[i].nom_francais}`
   pokemonName.className = "pokemon-name"
+
+  pokemonDescription.innerText = 
+  ` Type1: ${pokemonsInfosList.pokemons[i].type_1}\n
+    Type2: ${pokemonsInfosList.pokemons[i].type_2}\n
+    Impact: ${pokemonsInfosList.pokemons[i].impact}\n
+    Attaque: ${pokemonsInfosList.pokemons[i].attaque}\n
+    Defense: ${pokemonsInfosList.pokemons[i].defense}\n
+    Vitesse: ${pokemonsInfosList.pokemons[i].vitesse}\n
+    Special: ${pokemonsInfosList.pokemons[i].special}\n
+    Description: ${pokemonsInfosList.pokemons[i].description}\n`
 
   image.loading = 'lazy'
   imageContainer.className = "image-container"
   imageContainer.append(image)
 
   card.className = "card"
-  card.append(imageContainer, pokemonName)
+  card.append(imageContainer, pokemonName, pokemonDescription)
   pokemonContainer.append(card)
 
 
