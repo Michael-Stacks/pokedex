@@ -96,4 +96,8 @@ footer{
     header{
         flex-direction: column;
     }
+
+    input{
+        width: 150px;
+    }
 }
