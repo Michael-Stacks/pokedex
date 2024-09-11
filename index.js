@@ -2,6 +2,7 @@
 
 let path = "assets/pokemon-img/"
 const pokemonContainer = document.querySelector("main")
+const searchPokemon = document.getElementById('input')
 
 for (let i = 1; i <= 151; i++) {
   const image = document.createElement('img')
@@ -42,10 +43,23 @@ for (let i = 1; i <= 151; i++) {
   card.append(imageContainer, pokemonName, pokemonDescription)
   pokemonContainer.append(card)
 
+  /* cacher les autres card et afficher la card du pokemon trouve*/
+  searchPokemon.addEventListener('keyup', () => {
+    let value = searchPokemon.value.toLowerCase()
+    const cards = document.querySelectorAll('.card')
+  
+    cards.forEach((card, index) => {
+      let pokemonName = pokemonsInfosList.pokemons[index + 1].nom_francais.toLowerCase()
+  
+      if (pokemonName.includes(value)) {
+        card.style.display = 'block'
+      } else {
+        card.style.display = 'none'
+      }
+    })
+  })
 
 }
-
-/*Section click*/
 
 
 
