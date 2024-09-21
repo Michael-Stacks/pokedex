@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Defense: ${pokemonsInfosList.pokemons[i].defense}
         Vitesse: ${pokemonsInfosList.pokemons[i].vitesse}
         Special: ${pokemonsInfosList.pokemons[i].special}
-        Description: ${pokemonsInfosList.pokemons[i].description}`;
+        ${pokemonsInfosList.pokemons[i].description}`;
 
     /* changer le chemin d'acces en fonction du numero du pokemon */
     if (i < 10) {

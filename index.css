@@ -85,7 +85,7 @@ img{
     width: 100%;
     height: 200px;
     object-fit: contain;
-    background-color: rgba(128, 128, 128, 0.136);
+    background-color: rgba(251, 10, 10, 0.427);
 }
 
 h1{
@@ -116,6 +116,10 @@ footer{
 
     header{
         flex-direction: column;
+    }
+
+    .card{
+        scrollbar-width: auto;
     }
 
     input{
