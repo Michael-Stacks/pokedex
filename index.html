@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <title>Pokedex</title>
 </head>
 
@@ -15,6 +15,15 @@
     </header>
 
     <main>
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1 id="modal-pokemon-name"></h1>
+                <img id="modal-pokemon-image" alt="pokemon image">
+                <p id="modal-pokemon-description"></p>
+            </div>
+        </div>
+
         <section id="pokemon-list"></section> <!-- Section pour les cartes des pokémons -->
     </main>
 
@@ -23,8 +32,13 @@
     </footer>
 
     <!-- Inclusion des scripts -->
-    <script src="pokemonsInfos.js"></script>
-    <script src="index.js"></script>
+    <script src="js/pokemonsData.js"></script>
+    <script src="js/cardCreation.js"></script>
+    <script src="js/pokemonDescription.js"></script>
+    <script src="js/imageSource.js"></script>
+    <script src="js/searchFilter.js"></script>
+    <script src="js/cardPopUp.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
