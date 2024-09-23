@@ -2,26 +2,27 @@
 
 /**
  * Fonction pour créer une carte Pokémon
- * @param {number} i - L'index du Pokémon
+ * @param {number} index - L'index du Pokémon
  * @returns {HTMLElement} - La carte complète avec image, nom et description
  */
-function createPokemonCard(i) {
+function createPokemonCard(index) {
     const card = document.createElement('div');
     card.className = "card";
 
     // Image du Pokémon
     const image = document.createElement('img');
     image.loading = 'lazy';
-    image.src = getImageSource(i); // Chemin de l'image
+    image.src = getImageSource(index); // Chemin de l'image
 
     // Nom du Pokémon
     const pokemonName = document.createElement('h1');
     pokemonName.className = "pokemon-name";
-    pokemonName.innerText = pokemonsInfosList.pokemons[i].nom_francais;
-
-    // Description du Pokémon
-    const pokemonDescription = document.createElement('p');
-    pokemonDescription.innerText = generatePokemonDescription(i);
+    if (pokemonDataList && pokemonDataList.pokemons && pokemonDataList.pokemons[index]) {
+        pokemonName.innerText = pokemonDataList.pokemons[index].nom_francais || "Nom inconnu"; // Default name if undefined
+    } else {
+        pokemonName.innerText = "Nom indisponible"; // Fallback text
+        console.log(`Pokemon avec index ${index} n'existe pas ou n'est pas defini`);
+    }
 
     // Ajout des éléments à la carte
     card.append(image, pokemonName);

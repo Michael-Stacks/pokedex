@@ -3,23 +3,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
 
-    const mainContainer = document.getElementById('pokemon-list');
+    const pokemonList = document.getElementById('pokemon-list');
     const searchPokemon = document.getElementById('input');
 
     // Boucle pour générer les cartes des 151 premiers Pokémon
-    for (let i = 1; i <= 151; i++) {
-        const card = createPokemonCard(i);
+    for (let index = 0; index < 151; index++) {
+        const card = createPokemonCard(index);
 
         // Ajouter un événement au clic sur la carte pour ouvrir la modal
         card.addEventListener('click', () => {
-            const pokemon = pokemonsInfosList.pokemons[i];
+            const pokemon = pokemonDataList.pokemons[index];
             const imageSrc = card.querySelector('img').src;
-            const description = generatePokemonDescription(i);
+            const description = generatePokemonDescription(index);
 
             openModal(pokemon, imageSrc, description); // Ouvrir la modal avec les informations du Pokémon
         });
 
-        mainContainer.append(card); // Ajout de la carte au DOM
+        pokemonList.append(card); // Ajout de la carte au DOM
     }
 
     // Fonction de filtrage lors de la recherche

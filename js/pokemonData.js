@@ -1,4 +1,4 @@
-const pokemonsInfosList = {
+const pokemonDataList = {
   "pokemons": [
     {
       "numero": 1,

@@ -6,7 +6,7 @@
  * @returns {string} - La description formatée
  */
 function generatePokemonDescription(i) {
-    const pokemon = pokemonsInfosList.pokemons[i];
+    const pokemon = pokemonDataList.pokemons[i];
     return `
       Type1: ${pokemon.type_1}
       Type2: ${pokemon.type_2}
