@@ -58,7 +58,6 @@ section {
 
 .card:hover {
     cursor: pointer;
-    transform: scale(1.04);
 }
 
 .pokemon-name {

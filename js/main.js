@@ -1,30 +1,30 @@
 // main.js
-
-document.addEventListener('DOMContentLoaded', () => {
-    "use strict";
-
-    const pokemonList = document.getElementById('pokemon-list');
-    const searchPokemon = document.getElementById('input');
+    "use strict"
+    const pokemonList = document.getElementById('pokemon-list')
+    const searchPokemon = document.getElementById('input')
 
     // Boucle pour générer les cartes des 151 premiers Pokémon
     for (let index = 0; index < 151; index++) {
-        const card = createPokemonCard(index);
+        const card = createPokemonCard(index)
 
         // Ajouter un événement au clic sur la carte pour ouvrir la modal
         card.addEventListener('click', () => {
-            const pokemon = pokemonDataList.pokemons[index];
-            const imageSrc = card.querySelector('img').src;
-            const description = generatePokemonDescription(index);
+            // Recuperer la source d'image du pokemon
+            let imageSrc = card.querySelector('img').src
+            // Récupérer le nom du Pokémon à partir du données
+            let pokemonName = pokemonDataList[index].nom_francais.toString()
 
-            openModal(pokemon, imageSrc, description); // Ouvrir la modal avec les informations du Pokémon
+            // Récupérer les informations du Pokémon à partir du données
+            let pokemonInformations = card.querySelector('.pokemon-infos')
+            openModal(pokemonName, imageSrc, pokemonInformations) // Ouvrir la modal avec les informations du Pokémon
         });
 
-        pokemonList.append(card); // Ajout de la carte au DOM
+        // Ajout de la carte au DOM
+        pokemonList.append(card) // Ajout de la carte au DOM
     }
 
     // Fonction de filtrage lors de la recherche
     searchPokemon.addEventListener('keyup', () => {
-        const searchValue = searchPokemon.value.toLowerCase(); // Valeur de recherche en minuscule
-        filterPokemons(searchValue); // Filtrage des Pokémon
-    });
-});
+        let searchValue = searchPokemon.value.toLowerCase(); // Valeur de recherche en minuscule
+        filterPokemons(searchValue) // Filtrage des Pokémon
+    })

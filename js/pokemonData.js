@@ -1,5 +1,4 @@
-const pokemonDataList = {
-  "pokemons": [
+const pokemonDataList = [
     {
       "numero": 1,
       "nom_francais": "Bulbizarre",
@@ -2265,5 +2264,4 @@ const pokemonDataList = {
       "drawable": "pokemon_151",
       "description": "À l'aide d'un microscope, on peut distinguer le pelage extrêmement court, fin et délicat de ce Pokémon."
     }
-  ]
-}
+]
