@@ -8,7 +8,7 @@ function filterPokemons(searchValue) {
     const cards = document.querySelectorAll('.card');
 
     cards.forEach((card, index) => {
-        const pokemonName = pokemonDataList.pokemons[index].nom_francais.toLowerCase();
+        const pokemonName = pokemonDataList[index].nom_francais.toLowerCase();
         if (pokemonName.includes(searchValue)) {
             card.style.display = 'block';
         } else {
