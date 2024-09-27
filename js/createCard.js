@@ -32,27 +32,24 @@ function createPokemonCard(index) {
         pokemonType2 = `${pokemon.type_2}`
     }
 
+    // Informations du Pokémon
     let typesPokemon =`${pokemon.type_1} / ${pokemonType2}`
-    let impact = `Impact: ${pokemon.impact}`
-    let attaque = `Attaque: ${pokemon.attaque}`
-    let defense = `Défense: ${pokemon.defense}`
-    let vitesse = `Vitesse: ${pokemon.vitesse}`
-    let special = `Special: ${pokemon.special}`
     let description = `${pokemon.description}`
-
-    // Création des divs pour les informations
-    let informationsArray = [typesPokemon, impact, attaque, defense, vitesse, special, description]
 
     // Conteneur des informations du Pokémon
     const infomationsContainer = document.createElement('div')
     infomationsContainer.className = "pokemon-infos"
 
     // Ajout des informations au onteneur des informations
-    informationsArray.forEach(info => {
-        const informationsTag = document.createElement('p')
-        informationsTag.innerText = info
-        infomationsContainer.append(informationsTag)
-    })
+    const typeTag = document.createElement('h3')
+    typeTag.className = "pokemon-type"
+    const descriptionTag = document.createElement('p')
+    descriptionTag.className = "description"
+
+    typeTag.innerText = typesPokemon
+    descriptionTag.innerText = description
+    infomationsContainer.append(typeTag, descriptionTag)
+
 
     // Ajout des éléments à la carte
     card.append(image, pokemonName, infomationsContainer)

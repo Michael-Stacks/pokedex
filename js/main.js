@@ -23,6 +23,11 @@
         pokemonList.append(card) // Ajout de la carte au DOM
     }
 
+    //Previent les comportement par defaut
+    searchPokemon.addEventListener('click', (e)=>{
+        e.preventDefault();
+    })
+
     // Fonction de filtrage lors de la recherche
     searchPokemon.addEventListener('keyup', () => {
         let searchValue = searchPokemon.value.toLowerCase(); // Valeur de recherche en minuscule
