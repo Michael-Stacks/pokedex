@@ -12,7 +12,7 @@ function openModal(pokemonName, imageSrc, pokemonInformations) {
     let modalName = document.createElement('h1')
     modalName.innerText = pokemonName
 
-    let modalDescription = pokemonInformations
+    let modalDescription = pokemonInformations.cloneNode(true)
 
     modalContent.append(modalImage, modalName, modalDescription)
 
