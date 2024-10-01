@@ -33,9 +33,16 @@ input {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     user-select: none;
     background-color: wheat;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
 }
 
 section {
