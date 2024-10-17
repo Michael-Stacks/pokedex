@@ -46,9 +46,9 @@ main{
 }
 
 section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));    
+    gap: 10px;
 }
 
 .card {
@@ -58,7 +58,6 @@ section {
     text-align: center;
     border: 1px solid #333;
     box-shadow: 1px 1px 2px 1px grey;
-    margin: 10px;
     border-radius: 10px;
     transition: transform 0.3s ease;
     background-color: white;
@@ -165,6 +164,10 @@ footer {
     input {
         width: 100px;
         text-align: center;
+    }
+
+    .card{
+        margin: auto;
     }
 
     .modal img {

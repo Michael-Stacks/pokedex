@@ -24,8 +24,8 @@
     }
 
     //Previent les comportement par defaut
-    searchPokemon.addEventListener('click', (e)=>{
-        e.preventDefault();
+    searchPokemon.addEventListener('focus', (event)=>{
+        event.preventDefault();
     })
 
     // Fonction de filtrage lors de la recherche
