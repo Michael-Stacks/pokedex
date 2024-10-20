@@ -75,8 +75,8 @@ footer p{
         flex-direction: column;
     }
 
-    input[type="search"] {
-        width: 200px;
+    input{
+        width: 80%;
     }
 
     section {
