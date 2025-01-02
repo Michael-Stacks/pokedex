@@ -12,7 +12,7 @@ for (let i = 0; i < dataLength; i++) {
     cardImgCtn.className = 'card-img-ctn';
     const img = document.createElement('img');
     img.loading = 'lazy';
-    img.src = `../assets/${pokemonData[i].drawable}.png`;
+    img.src = `./assets/${pokemonData[i].drawable}.png`;
     img.alt = 'pokemon-image';
     cardImgCtn.appendChild(img);
 
