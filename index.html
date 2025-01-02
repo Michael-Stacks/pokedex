@@ -4,39 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/modal-card.css">
     <title>Pokedex</title>
 </head>
 
 <body>
     <header>
-        <p>pokedex</p>
-        <input type="search" id="input" placeholder="Recherche...">
-    </header>
-
-    <main>
-        <div id="pokemon-modal" class="modal">
-                <div id="modal-content" class="modal-content">
-                    <span class="close">&times;</span>
-                </div>
+        <div class="logo">
+            <p>POKEDEX</p>
+            <div class="pokeball">
+                <img src="icon.webp" alt="pokeball-icon">
+            </div>
         </div>
-
-        <section id="pokemon-list"></section> <!-- Section pour les cartes des pokémons -->
+        <div class="search">
+            <img src="search.png" alt="search-icon">
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
+    <main>
+        <div class="modal"></div>
+        <!--Liste des pokemons-->
+        <div id="pokemons">
+            <!--Pokemons-->
+            <!--Pokemon card template-->
+            <!-- <div class="card">
+                <div class="card-img-ctn">
+                    <img src="pokemon_001.png" alt="pokemon-image">
+                </div>
+                <div class="card-title">
+                    <p>Nom:Nom</p>
+                    <p>type:type</p>
+                </div>
+                <div class="card-body">
+                    <div class="content">
+                        <p>impact:00</p>
+                        <p>attaque:00</p>
+                        <p>vitesse:00</p>
+                        <p>defense:00</p>
+                        <p>speciale:00</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p>description:descriptiondescriptiondescriptiondescriptiondescriptiondescription</p>
+                    <a>wikipedia:wikipediawikipediawikipedia</a>
+                </div>
+            </div>
+        </div> -->
     </main>
 
     <footer>
         <p>Made by jabir756 in 2024</p>
     </footer>
 
-    <!-- Inclusion des scripts -->
+    <!--Inclusion des scripts-->
+    <script  type="module" src="js/main.js"></script>
     <script src="js/pokemonData.js"></script>
-    <script src="js/createCard.js"></script>
-    <script src="js/imageSource.js"></script>
-    <script src="js/searchFilter.js"></script>
-    <script src="js/cardPopUp.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/openModal.js"></script>
 </body>
 
 </html>

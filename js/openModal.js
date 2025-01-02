@@ -1,27 +1,33 @@
-'use strict';
+const modal = document.querySelector('.modal');
 
-const dataLength = pokemonData.length;
-const pokemonList = document.querySelector('#pokemons');
+function openModal(cardToOpen){
+    modal.style.display = 'block';
 
-for (let i = 0; i < dataLength; i++) {
     const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.id = i;
+    card.className = 'modal-card';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-btn';
+    closeBtn.textContent = 'X';
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        card.remove();
+    });
 
     const cardImgCtn = document.createElement('div');
     cardImgCtn.className = 'card-img-ctn';
     const img = document.createElement('img');
     img.loading = 'lazy';
-    img.src = `../assets/${pokemonData[i].drawable}.png`;
+    img.src = `../assets/${cardToOpen.drawable}.png`;
     img.alt = 'pokemon-image';
     cardImgCtn.appendChild(img);
 
     const cardTitle = document.createElement('div');
     cardTitle.className = 'card-title';
     const nameP = document.createElement('p');
-    nameP.textContent = `Nom: ${pokemonData[i].nom_francais}`;
+    nameP.textContent = `Nom: ${cardToOpen.nom_francais}`;
     const typeP = document.createElement('p');
-    typeP.textContent = `Type: ${pokemonData[i].type_1} ${pokemonData[i].type_2? pokemonData[i].type_2 : ''}`;
+    typeP.textContent = `Type: ${cardToOpen.type_1} ${cardToOpen.type_2? cardToOpen.type_2 : ''}`;
     cardTitle.appendChild(nameP);
     cardTitle.appendChild(typeP);
 
@@ -30,15 +36,15 @@ for (let i = 0; i < dataLength; i++) {
     const content = document.createElement('div');
     content.className = 'content';
     const impactP = document.createElement('p');
-    impactP.textContent = `Impact: ${pokemonData[i].impact}`;
+    impactP.textContent = `Impact: ${cardToOpen.impact}`;
     const attackP = document.createElement('p');
-    attackP.textContent = `Attaque: ${pokemonData[i].attaque}`;
+    attackP.textContent = `Attaque: ${cardToOpen.attaque}`;
     const speedP = document.createElement('p');
-    speedP.textContent = `Vitesse: ${pokemonData[i].vitesse}`;
+    speedP.textContent = `Vitesse: ${cardToOpen.vitesse}`;
     const defenseP = document.createElement('p');
-    defenseP.textContent = `Défense: ${pokemonData[i].defense}`;
+    defenseP.textContent = `Défense: ${cardToOpen.defense}`;
     const specialP = document.createElement('p');
-    specialP.textContent = `Spéciale: ${pokemonData[i].special}`;
+    specialP.textContent = `Spéciale: ${cardToOpen.special}`;
     content.appendChild(impactP);
     content.appendChild(attackP);
     content.appendChild(speedP);
@@ -49,28 +55,19 @@ for (let i = 0; i < dataLength; i++) {
     const cardFooter = document.createElement('div');
     cardFooter.className = 'card-footer';
     const descriptionP = document.createElement('p');
-    descriptionP.textContent = `Description: ${pokemonData[i].description}`;
+    descriptionP.textContent = `Description: ${cardToOpen.description}`;
     const wikiLink = document.createElement('a');
     wikiLink.textContent = 'Wikipedia';
-    wikiLink.href = pokemonData[i].wiki_url;
+    wikiLink.href = cardToOpen.wiki_url;
     wikiLink.target = '_blank';
     cardFooter.appendChild(descriptionP);
     cardFooter.appendChild(wikiLink);
 
+    card.appendChild(closeBtn);
     card.appendChild(cardImgCtn);
     card.appendChild(cardTitle);
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
 
-    pokemonList.appendChild(card);
+    modal.appendChild(card);
 }
-
-const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-    card.addEventListener('click', (event) => {
-        let idOfCardToOpen = event.currentTarget.dataset.id;
-        let cardToOpen = pokemonData[idOfCardToOpen];
-        openModal(cardToOpen);
-    });
-});
