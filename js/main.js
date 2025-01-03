@@ -10,7 +10,8 @@ for (let i = 0; i < dataLength; i++) {
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
     card.addEventListener('click', (event) => {
-        let idOfCardToOpen = event.currentTarget.dataset.id;
+        let idOfCardToOpen = 
+        event.currentTarget.dataset.id  - 1;//dataset.id start with 0 and pokemon start with 1
         let cardToOpen = pokemonData[idOfCardToOpen];
         openModal(cardToOpen);
     });
