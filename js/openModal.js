@@ -18,7 +18,7 @@ function openModal(cardToOpen){
     cardImgCtn.className = 'card-img-ctn';
     const img = document.createElement('img');
     img.loading = 'lazy';
-    img.src = `../assets/${cardToOpen.drawable}.png`;
+    img.src = `./assets/${cardToOpen.drawable}.png`;
     img.alt = 'pokemon-image';
     cardImgCtn.appendChild(img);
 
